@@ -4,11 +4,6 @@ pipeline {
         maven 'maven'
     }
     stages {
-        stage(src_code){
-            steps{
-                git 'https://github.com/Sudeepa8055/Spring_mySql_project.git'
-            }
-        }
         stage('Build') {
             steps {
                 sh 'mvn clean package -DskipTests'
@@ -26,4 +21,12 @@ pipeline {
             }
         }
     }
+    post {
+    success {
+      echo "Deployed successfully"
+    }
+    failure {
+      echo "Failed to Deploy"
+    }
+  }
 }
