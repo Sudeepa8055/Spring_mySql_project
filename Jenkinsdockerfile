@@ -15,9 +15,9 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t app .'
-                    sh 'docker tag app sudeepm8055/mytask:$BUILD_ID'
-                    sh 'docker tag app sudeepm8055/mytask:latest'
+                    sh 'docker build -t application .'
+                    sh 'docker tag application sudeepm8055/mytask:$BUILD_ID'
+                    sh 'docker tag application sudeepm8055/mytask:latest'
                 }
             }
         }
